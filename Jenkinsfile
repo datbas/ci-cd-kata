@@ -16,10 +16,10 @@ pipeline {
                 bat "./gradlew test"
             }
         }
-        stage('Run') {
+        stage('SonarQube') {
             steps {
                 echo 'Implementing Run'
-                withSonarQubeEnv('Sonarqube4.6'){
+                withSonarQubeEnv('sonarqube4.6'){
                 bat "./gradlew sonarqube"
                 }
             }

@@ -19,7 +19,7 @@ pipeline {
         stage('SonarQube') {
             steps {
                 echo 'Implementing Run'
-                withSonarQubeEnv('sonarqube4.6'){
+                withSonarQubeEnv(){
                 bat "./gradlew sonarqube"
                 }
             }

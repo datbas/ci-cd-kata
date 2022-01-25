@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
     gradle 'Gradle7.4'
-    SonarQube 'Sonarqube4.6'
+    sonarqube 'Sonarqube4.6'
     }
     stages {
         stage('Build Code') {
@@ -20,7 +20,9 @@ pipeline {
         stage('Run') {
             steps {
                 echo 'Implementing Run'
-                bat "./gradlew run"
+                withSonarQubeEnv('SonarQube'){
+                bat "./gradlew sonarqube"
+                }
             }
         }
     }

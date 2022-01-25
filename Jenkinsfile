@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools {
     gradle 'Gradle7.4'
+    Sonarqube 'Soanrqube4.6'
     }
     stages {
         stage('Build Code') {

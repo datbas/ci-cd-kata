@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build Code') {
             steps {
-                gradlew('clean', 'classes')
+                bat "./gradlew build"
             }
         }
     }

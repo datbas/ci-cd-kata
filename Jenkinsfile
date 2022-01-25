@@ -9,7 +9,7 @@ pipeline {
                 echo 'Implementing task-1'
                 bat "./gradlew clean"
                 echo 'Implementing task-2'
-                bat "./gradlew compileTestJava"
+                bat "./gradlew compileTest"
                 echo 'Implementing task-3'
                 bat "./gradlew build"
                 echo 'Implementing task-4'

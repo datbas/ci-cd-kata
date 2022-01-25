@@ -11,7 +11,7 @@ pipeline {
                 echo 'Implementing task-2'
                 bat "./gradlew build"
                 echo 'Implementing task-3'
-                bat "./gradle test"
+                bat "./gradlew test"
             }
         }
     }

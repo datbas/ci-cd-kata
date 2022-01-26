@@ -17,7 +17,7 @@ pipeline {
             }
         }
         stage('SonarQube') {
-            def scannerHome = tool 'sonarqube4.6';
+            def scannerHome = tool 'sonarqube4.6'
             steps {
                 echo 'Implementing sonarqube analysis'
                 withSonarQubeEnv('sonarqube-9.2'){

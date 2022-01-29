@@ -18,7 +18,6 @@ pipeline {
             steps {
                 echo 'Archiving Artifacts'
                 archiveArtifacts artifacts: '**/*.*', followSymlinks: false
-                }
             }
         }
         stage('SonarQube') {

@@ -6,13 +6,13 @@ pipeline {
     stages {
         stage('Build Code') {
             steps {
-                echo 'Implementing task-1'
+                echo 'Executing task-1: Clean'
                 bat "./gradlew clean"
-                echo 'Implementing task-2'
-                bat "./gradlew compileTest"
-                echo 'Implementing task-3'
+                echo 'Executing task-2: compile and Test '
+                bat "./gradlew compileJavaTest"
+                echo 'Executing task-3: Build'
                 bat "./gradlew build"
-                echo 'Implementing task-4'
+                echo 'Executing task-4: Test'
                 bat "./gradlew test"
             }
         }

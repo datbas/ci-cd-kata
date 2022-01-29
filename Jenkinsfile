@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo 'Executing task-1: Clean'
                 bat "./gradlew clean"
-                echo 'Executing task-2: Build' archiveArtifacts artifacts: '*.*', followSymlinks: false
+                echo 'Executing task-2: Build'
                 bat "./gradlew build"
                 echo 'Executing task-3: Test'
                 bat "./gradlew test"

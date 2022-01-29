@@ -12,11 +12,6 @@ pipeline {
                 bat "./gradlew build"
                 echo 'Executing task-3: Test'
                 bat "./gradlew test"
-            }
-        }
-        stage('Publish Artifact') {
-            steps {
-                echo 'Implementing sonarqube analysis'
                 archiveArtifacts artifacts: '*.*', followSymlinks: false
             }
         }

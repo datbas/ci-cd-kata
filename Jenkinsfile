@@ -12,7 +12,7 @@ pipeline {
                 bat "./gradlew build"
                 echo 'Executing task-3: Test'
                 bat "./gradlew test"
-                archiveArtifacts artifacts: '*.*', followSymlinks: false
+                archiveArtifacts artifacts: '**/*.*', followSymlinks: false
             }
         }
         stage('SonarQube') {

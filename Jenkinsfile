@@ -8,12 +8,16 @@ pipeline {
             steps {
                 echo 'Executing task-1: Clean'
                 bat "./gradlew clean"
-                echo 'Executing task-2: compile and Test '
-                bat "./gradlew compileJavaTest"
-                echo 'Executing task-3: Build'
+                echo 'Executing task-2: Build' archiveArtifacts artifacts: '*.*', followSymlinks: false
                 bat "./gradlew build"
-                echo 'Executing task-4: Test'
+                echo 'Executing task-3: Test'
                 bat "./gradlew test"
+            }
+        }
+        stage('Publish Artifact') {
+            steps {
+                echo 'Implementing sonarqube analysis'
+                archiveArtifacts artifacts: '*.*', followSymlinks: false
             }
         }
         stage('SonarQube') {
